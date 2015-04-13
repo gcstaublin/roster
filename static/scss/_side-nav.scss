@@ -105,12 +105,12 @@
     }
 
     &--upload {
-      &:before { background-image: url(/static/img/svg/icn_upload.svg); }
+      &:before { background-image: url(../img/svg/icn_upload.svg); }
 
     }
 
     &--download {
-      &:before { background-image: url(/static/img/svg/icn_download.svg); }
+      &:before { background-image: url(../img/svg/icn_download.svg); }
     }
 
   }
