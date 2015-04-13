@@ -1,0 +1,302 @@
+// --------------------------------------------
+// --------------------------------------------
+//
+// Tables
+//
+// --------------------------------------------
+// --------------------------------------------
+
+.athletes__wrap { }
+
+
+
+
+// Element Selectors
+// ------------------------------------
+
+table {
+  width: 100%;
+  overflow-x: scroll;
+}
+
+
+td {
+  @extend %body-2;
+  border-right: 1px solid $color-bg--med;
+  border-bottom: 1px solid $color-bg--med;
+  padding: 15px 15px;
+}
+
+
+th {
+  @extend %body-2;
+  padding: 0 15px 2px;
+  text-align: left;
+  border-bottom: 1px solid $color-bg--med;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+
+
+
+// Athlete
+// ------------------------------------
+
+.athlete {
+  cursor: pointer;
+  white-space: nowrap;
+  &:hover { > .athlete__control { opacity: 0.45; } }
+
+  > td { border-bottom: 0; }
+
+  &__number {
+    width: 2%;
+    // max-width: 30px;
+    border-left: 1px solid $color-bg--med;
+    font-size: 14px;
+    color: $color-txt--med;
+    input { max-width: 35px; }
+  }
+
+  &__name {
+    width: 20%;
+    // max-width: 160px;
+    border-right: 0;
+    padding-right: 0;
+    font-size: 15px;
+    color: $color-txt--med;
+    input { max-width: 180px; }
+  }
+
+  &__pos {
+    border-right: 0;
+    input { max-width: 35px; }
+  }
+
+  &__class {
+    input { max-width: 35px; }
+  }
+
+  &__day { }
+
+  &__week { }
+
+  &__total { }
+
+  &__login {
+    border-right: 0;
+    font-size: 11px;
+    padding-right: 0;
+  }
+
+  &__control {
+    background-image: url(/static/img/svg/player_settings.svg);
+    background-repeat: no-repeat;
+    background-position: 0 10px;
+    opacity: 0;
+    transition: opacity 0.2s linear 0.2s;
+  }
+
+} // athlete
+
+
+.row__child {
+  > td {
+    border-right: 0;
+    padding: 0;
+  }
+
+  height: 0;
+  overflow: hidden;
+  transition: height 0.5s ease-in-out;
+  &--is-active {
+    transition: height 0.5s ease-in-out;
+    overflow: visible;
+    height: 300px;
+  }
+}
+
+
+.athlete-drop__wrap {
+  position: relative;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  background-color: $color-bg--lt;
+  transition: height 0.5s ease-in-out;
+
+  .row__child--is-active & {
+    height: 320px;
+    transition: height 0.5s ease-in-out;
+    overflow: visible;
+
+    // when active, triangle appears
+    &:before {
+      top: -3px;
+      background-color: $color-bg--lt;
+    }
+  }
+
+  &:before {
+    position: absolute;
+    content: '\0020';
+    transform: rotate(45deg);
+    top: 6px;
+    left: 12px;
+    width: 18px;
+    height: 18px;
+    background-color: transparent;
+    transition: top 0.2s linear, background-color 0.2s linear;
+    transition-delay: 0.2s, 0.1s;
+  }
+}
+
+
+.athlete-drop {
+  @include clearfix;
+  padding: 20px;
+  opacity: 0.01;
+  transition: opacity 0.2s linear;
+  transition-delay: 0s;
+
+  .row__child--is-active & {
+    opacity: 1;
+    transition: opacity 0.2s linear;
+    transition-delay: 0.4s;
+  }
+
+  // athlete-drop__section layout
+  &__section {
+
+    & + & {
+      margin-left: 5%;
+    }
+
+    // quarter section
+    &--quarter {
+      width: 20%;
+      float: left;
+    }
+
+    // half section
+    &--half {
+      width: 45%;
+      float: left;
+    }
+
+  } // section
+
+} // athlete-drop
+
+
+
+.athlete-drop {
+  &__items {
+    @extend %body-2;
+    @extend %lists;
+  }
+
+  &__item {
+    margin-bottom: 10px;
+    p { margin: 0; padding: 0; }
+  }
+
+  span {
+    display: block;
+    margin: 0 0 2px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 1;
+  }
+
+
+
+  &__hdr {
+    @extend %subhead-1;
+    color: $color-txt--drk;
+    margin: 0 0 5px 0;
+  }
+
+}
+
+
+.athlete-drop__controls {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+}
+
+
+
+
+
+.clip-indicator {
+  position: relative;
+  top: 2px;
+  width: 75px;
+  height: 13px;
+  margin-right: 8px;
+  display: inline-block;
+  background-color: $color-bg--med;
+  background-color: darken($color-bg--lt, 5%);
+  &:before {
+    position: absolute;
+    content: '\0020';
+    height: 13px;
+    background-color: $color-accent;
+    background-image: linear-gradient(darken($color-accent, 10%), $color-accent);
+    border-right: 1px solid darken($color-bg--lt, 10%);
+  }
+
+  &[data-indicator="25"] { &:before { width: 25%; } }
+  &[data-indicator="35"] { &:before { width: 35%; } }
+  &[data-indicator="45"] { &:before { width: 45%; } }
+  &[data-indicator="65"] { &:before { width: 65%; } }
+  &[data-indicator="85"] { &:before { width: 85%; } }
+
+}
+
+
+
+
+// Styling form elements in dropdown
+// ------------------------------------
+
+.athlete-drop,
+.athlete {
+
+  input[disabled='disabled'],
+  textarea[disabled='disabled'] {
+    background-color: transparent;
+    outline: 0;
+    border: 0;
+    padding: 0;
+    transition: padding 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  }
+  input,
+  textarea {
+    transition: padding 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    background-color: lighten($color-bg--lt, 2%);
+    padding: 5px;
+    outline: 0;
+    box-shadow: 0;
+    border-radius: 2px;
+    -webkit-appearance: none;
+    border: 1px solid darken($color-bg--med, 7%);
+  }
+
+
+  textarea {
+    width: 100%;
+    height: 175px;
+    resize: none;
+  }
+
+}
+
+
+
+

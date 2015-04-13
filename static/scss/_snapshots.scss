@@ -1,0 +1,121 @@
+// --------------------------------------------
+// --------------------------------------------
+//
+// Graphics
+//
+// --------------------------------------------
+// --------------------------------------------
+
+
+
+
+// Graphics Variables
+// ------------------------------------
+
+$graphic-size: 60px;
+$graphic-size__number: 0.32em;
+$graphic-size__numberHt: 1.166666667;
+$graphic-size__padding: $graphic-size + 10px;
+
+
+
+
+// Graphics Variables
+// ------------------------------------
+
+.graphics__hdr {
+  @extend %hdr--sub;
+}
+
+
+.graphics__wrapper { }
+
+
+.graphic__wrapper {
+  @extend %lists;
+   @include bp($bp-layout--main, max) {
+    @include media-grid(4, 25px, $target: '.graphic');
+  }
+}
+
+
+.graphic {
+  @include bp($bp-layout--main) {
+    margin-bottom: 45px;
+  }
+
+
+  &__inner {
+    font-size: $graphic-size;
+    position: relative;
+    &:before,
+    &:after {
+      position: absolute;
+      content: '\0020';
+      width: 1em;
+      height: 1em;
+      border-radius: 50%;
+    }
+    &:before { background-color: darken($color-bg--med, 10%); }
+    &:after {
+      top: 0.1em;
+      left: 0.1em;
+      width: .8em;
+      height: .8em;
+      background-color: $color-bg--lt;
+    }
+  }
+
+
+  &__number {
+    @extend %disp-1;
+    position: absolute;
+    z-index: 3;
+    width: $graphic-size;
+    font-size: $graphic-size__number;
+    line-height: $graphic-size__numberHt;
+    text-align: center;
+    padding-left: 0.157894737em;
+    span { font-weight: 100; }
+  }
+
+
+  &__text {
+    @extend %body-1;
+    margin-top: 0;
+    padding-top: $graphic-size__padding;
+    // line-height: 1.538461538;
+    line-height: 1.45;
+    color: $color-txt--lt;
+
+    &--callout {
+      text-decoration: underline;
+      color: darken($color-txt--lt, 20%);
+    }
+  }
+
+} // graphic
+
+
+.graphic__slice {
+  clip: rect(auto, auto, auto, auto);
+  position: absolute;
+  width: 1em;
+  height: 1em;
+}
+
+
+.pie {
+  position: absolute;
+  border: .1em solid $color-accent;
+  width: 1em;
+  height: 1em;
+  border-radius: .5em;
+  clip: rect(0em, 0.5em, 1em, 0em);
+  transform: rotate(180deg);
+
+  &--55 { transform: rotate(200deg); }
+  &--60 { transform: rotate(210deg); }
+  &--75 { transform: rotate(275deg); }
+  &--90 { transform: rotate(325deg); }
+}

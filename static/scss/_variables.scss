@@ -1,0 +1,91 @@
+// --------------------------------------------
+// --------------------------------------------
+//
+// Variables
+//
+// --------------------------------------------
+// --------------------------------------------
+
+
+
+
+// Font Import
+// ------------------------------------
+//
+@import url(http://fonts.googleapis.com/css?family=Roboto:500,400italic,100,500italic,100italic,400);
+
+
+
+
+
+// Width Variables
+// ------------------------------------
+
+$width-content: 1100px;
+
+
+
+
+// Color Variables
+// ------------------------------------
+
+$color-accent:       #f87620;
+
+$color-btn--action:  #0fade7;
+$color-btn--secondary:  #e8e8e8;
+
+$color-gray--drk:    #232a31;
+$color-gray--med:    #38434f;
+
+$color-bg--lt:       #f5f5f5;
+$color-bg--med:      #e8e8e8;
+
+$color-txt--drk:     #000;
+$color-txt--med:     #1d1d1d;
+$color-txt--lt:      #727272;
+
+$color-txt--reverse:  $color-bg--med;
+
+
+
+// Type Variables
+// ------------------------------------
+
+$sans:  Roboto, Helvetica, sans-serif;
+
+$font-weight--lt:    100;
+$font-weight--reg:   400;
+$font-weight--med:   500;
+
+
+
+
+
+// Shadow Variables
+// ------------------------------------
+
+$shadow-nav: 0 0 4px rgba(0, 0, 0, 0.14), 0 4px 8px rgba(0, 0, 0, 0.28);
+$shadow-card: 0 -1px 0 #e5e5e5, 0 0 2px rgba(0,0,0,.12), 0 2px 4px rgba(0,0,0,.24);
+$shadow-menu: 0 2px 10px rgba(0, 0, 0, 0.2);
+$shadow-btn: 0 0 4px rgba(0,0,0,.14), 0 4px 8px rgba(0,0,0,.28);
+$shadow-btn--hover:  0 0 6px rgba(0,0,0,.16), 0 6px 12px rgba(0,0,0,.32);
+$shadow-btn--active:  0 0 6px rgba(0,0,0,.18), 0 6px 12px rgba(0,0,0,.36);
+$shadow-menu: 0 0 4px rgba(0,0,0,.14), 2px 4px 8px rgba(0,0,0,.28);
+
+$shadow-menu--left: -4px 0 4px rgba(0,0,0,.14), -2px 4px 8px rgba(0,0,0,.28);
+
+
+
+// Transition Variables
+// ------------------------------------
+
+
+
+
+
+// Breakpoints
+// ------------------------------------
+
+// $bp-layout--main: 1065px;
+
+$bp-layout--main: 1185px;

@@ -1,0 +1,66 @@
+
+
+.form-wrapper {
+
+  fieldset {
+    border: 0;
+    padding: 0;
+    margin: 0 0 30px;
+  }
+
+  legend {
+    @extend %subhead-2;
+    color: $color-accent;
+    margin-bottom: 5px;
+  }
+
+  label {
+    display: block;
+    @extend %caption;
+    font-weight: 400;
+    line-height: 1.6;
+  }
+
+  input {
+    width: 100%;
+    @extend %body-2;
+    line-height: 30px;
+    padding: 5px 10px;
+    border: 1px solid $color-bg--lt;
+    background-color: lighten($color-bg--lt, 3%);
+    border-radius: 2px;
+    -webkit-appearance: none;
+
+  }
+
+
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    @include clearfix;
+  }
+
+  li {
+    margin-bottom: 12px;
+  }
+}
+
+
+.player__pos,
+.player__no,
+.player__grad {
+  width: 62px;
+  margin-right: 25px;
+  float: left;
+  border: 0;
+}
+
+.player__grad {
+  width: 120px;
+  margin-right: 0;
+}
+
+
+

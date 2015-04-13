@@ -1,0 +1,86 @@
+// --------------------------------------------
+// --------------------------------------------
+//
+// Buttons
+//
+// --------------------------------------------
+// --------------------------------------------
+
+.btn--primary {
+  @extend %button--primary;
+  // &:hover {
+  //   box-shadow: $shadow-btn--hover;
+  // }
+  // &:active {
+  //   box-shadow: $shadow-btn--active;
+  // }
+}
+
+.btn--secondary {
+  @extend %button--secondary;
+  color: $color-txt--lt;
+}
+
+
+.btn--exit {
+  @extend %button;
+  @extend %caption;
+  position: absolute;
+  right: 20px;
+  padding: 5px 7px;
+  border: 1px solid $color-bg--med;
+  color: $color-txt--lt;
+  border-radius: 1px;
+  transition: border-color 0.3s ease-in-out;
+  &:hover {
+    border-color: $color-txt--lt;
+  }
+}
+
+
+.btn--settings {
+  @extend %button;
+  position: absolute;
+  bottom: 15px;
+  right: 30px;
+  width: 25px;
+  height: 25px;
+  background-image: url(/static/img/svg/icn_settings.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.6;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+
+.btn--edit {
+  @extend %button;
+  width: 35px;
+  height: 35px;
+  background-image: url(/static/img/svg/icn_edit.svg);
+  background-repeat: no-repeat;
+  background-size: 25px;
+  opacity: 0.4;
+  display: none;
+  transition: opacity 0.3s ease-in-out;
+  &:hover {
+    opacity: 1;
+  }
+  &.is-active { display: block; }
+}
+
+
+
+.btn--save { @extend %button--primary; }
+
+.btn--nosave { @extend %button--secondary; }
+
+.btn--save,
+.btn--nosave {
+  display: none;
+  &.is-active {
+    display: inline-block;
+  }
+}

@@ -1,0 +1,143 @@
+// --------------------------------------------
+// --------------------------------------------
+//
+// Clearfix
+//
+// --------------------------------------------
+// --------------------------------------------
+
+// Micro clearfix, as per: css-101.org/articles/clearfix/latest-new-clearfix-so-far.php
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}  // clearfix
+
+
+
+
+// --------------------------------------------
+// --------------------------------------------
+//
+// Breakpoint
+//
+// --------------------------------------------
+// --------------------------------------------
+
+
+@mixin bp($bp-min, $bp-max: null) {
+  $one-px: 1px;
+  @if $bp-max == null {
+    @media screen and (min-width: #{$bp-min} ) { @content; }
+  }
+  @else if $bp-max == max {
+    @media screen and (max-width: #{$bp-min} ) { @content; }
+  }
+  @else {
+    $max-point: $bp-max - $one-px;
+    @media screen and (min-width: #{$bp-min} ) and (max-width: #{$max-point} ) { @content; }
+  }
+} // bp
+
+
+
+
+// --------------------------------------------
+// --------------------------------------------
+//
+// Media Grid
+//
+// --------------------------------------------
+// --------------------------------------------
+
+// Default variables
+$mg-pad: 26px !default;
+$mg-targ: '.grid-item' !default;
+$mg-bdr-color: #dedede !default;
+$mg-bdr-width: 1px !default;
+
+
+@mixin media-grid($num: 2, $pad: $mg-pad, $h-rules: false, $v-rules: false, $target: $mg-targ) {
+  @include clearfix;
+  overflow: hidden;
+  margin-left: -$pad;
+
+  $item-width: ( 100 / $num ) * 1%;
+  $nth: #{$num}n;
+  $nth-plus: $num + 1;
+
+  $h-rule-pos: ($pad / 2);
+  $v-rule-pos: ($pad / 2);
+
+  @if $v-rules == true {
+    > #{$target} {
+      position: relative;
+      &:nth-of-type(#{$nth} + #{$nth-plus}) {
+        &:before {
+          position: absolute;
+          content: '';
+          top: -$v-rule-pos;
+          height: $mg-bdr-width;
+          background-color: $mg-bdr-color;
+          width: 9999px;
+        }
+      }
+    }
+  }
+
+  @if $h-rules == true {
+    > #{$target} {
+      position: relative;
+      &:after {
+        position: absolute;
+        content: '';
+        top: 0;
+        bottom: 0;
+        right: -$h-rule-pos;
+        width: $mg-bdr-width;
+        background-color: $mg-bdr-color;
+      }
+      // take away rule on last item in each row
+      &:nth-of-type(#{$nth} + #{$num}) { &:after { position: static; } }
+      &:last-of-type { &:after { position: static; } }
+    }
+  }
+
+  > #{$target} {
+    float: left;
+    width: #{$item-width};
+    padding-left: $pad;
+    // clears float for first item in a row
+    &:nth-of-type(#{$nth} + #{$nth-plus}) { clear: left; }
+    // set a top margin for items after the first row
+    &:nth-of-type(1n + #{$nth-plus}) { margin-top: $pad; }
+  }
+
+} //media-grid
+
+
+
+
+
+// Backgrounder mixin
+// ------------------------------------
+@mixin backgrounder($bg-color: yellow, $direction: left) {
+  position: relative;
+  &:before {
+    position: absolute;
+    content: '\0020';
+    top: 0;
+    bottom: 0;
+    width: 9999em;
+    background-color: $bg-color;
+    @if $direction == 'left' {
+      right: 100%;
+    }
+    @else if $direction == 'right' {
+      left: 100%;
+    }
+  }
+} // backgrounder

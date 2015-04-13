@@ -1,0 +1,139 @@
+// Filter Bar
+// ------------------------------------
+
+.filter-bar {
+  position: relative;
+  background-color: #fff;
+  box-shadow: $shadow-card;
+  margin: 0 0 45px;
+  border-radius: 3px;
+  padding: 0 20px;
+  @include clearfix;
+
+  &__main {
+    float: left;
+  }
+
+  &__secondary {
+    float: right;
+    width: 50%;
+    max-width: 200px;
+  }
+}
+
+
+
+
+// Filter Bar
+// ------------------------------------
+
+.filters {
+  @extend %body-2;
+  @extend %lists;
+
+  &__parent {
+    display: inline-block;
+    & + & { margin-left: 40px; }
+  }
+
+  &__trigger {
+    @extend %body-2;
+    display: block;
+    padding: 15px 10px;
+    cursor: pointer;
+    &:hover {
+      color: $color-txt--med;
+    }
+  }
+}
+
+
+.dropdown {
+  @extend %lists;
+  display: none;
+  background-color: #fff;
+  padding: 15px 25px 12px 30px;
+  box-shadow: $shadow-menu;
+  border-radius: 3px;
+  position: absolute;
+  z-index: 1;
+  top: 45px;
+
+  &--is-active {
+    display: block;
+  }
+}
+
+
+.dropdown__item {
+  padding-left: 10px;
+}
+
+
+.dropdown__link {
+  cursor: pointer;
+  position: relative;
+  display: block;
+  line-height: 33px;
+
+  &:before {
+    position: absolute;
+    content: '\0020';
+    background-image: url(/static/img/svg/icn_selected.svg);
+    background-repeat: no-repeat;
+    width: 14px;
+    height: 14px;
+    top: 50%;
+    margin-top: -7px;
+    left: -20px;
+    opacity: 0.01;
+  }
+  &:hover {
+    &:before { opacity: 0.5; }
+  }
+
+
+  &.is-selected {
+    color: $color-txt--med;
+    &:before { opacity: 0.8; }
+  }
+}
+
+
+
+
+// Search
+// ------------------------------------
+
+.label {
+  display: none;
+}
+
+.search {
+  @extend %body-2;
+  border: 0;
+  height: 54px;
+  width: 100%;
+  &:focus {
+    -webkit-appearance: none;
+    outline: 0;
+  }
+}
+
+
+.search-input {
+  position: relative;
+  &:after {
+    position: absolute;
+    content: '\0020';
+    top: 50%;
+    right: 0;
+    margin-top: -10px;
+    width: 20px;
+    height: 20px;
+    background-image: url(/static/img/svg/icn_search.svg);
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    opacity: 0.5;
+  }
+}
