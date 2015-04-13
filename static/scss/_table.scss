@@ -300,3 +300,16 @@ th {
 
 
 
+// Hiding at smaller breakpoints
+td.mobile-hide,
+th.mobile-hide {
+  @include bp($bp-table--hide, max) {
+    display: none;
+  }
+}
+
+td.athlete__day {
+  @include bp($bp-table--hide, max) {
+    border-left: 1px solid $color-bg--med;
+  }
+}

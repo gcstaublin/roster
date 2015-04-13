@@ -997,6 +997,19 @@ th {
   resize: none;
 }
 
+@media screen and (max-width: 1250px) {
+  td.mobile-hide,
+  th.mobile-hide {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  td.athlete__day {
+    border-left: 1px solid #e8e8e8;
+  }
+}
+
 .form-wrapper fieldset {
   border: 0;
   padding: 0;
