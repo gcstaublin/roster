@@ -26,5 +26,26 @@ body {
 .site-nav {
   width: 100%;
   height: 48px;
+  line-height: 48px;
   background-color: $color-gray--drk;
+  padding: 0 30px;
+
+  a {
+    color: darken($color-bg--lt, 25%);
+    text-decoration: none;
+    display: block;
+    &:hover { color: darken($color-bg--lt, 15%); }
+  }
 }
+
+
+
+// --------------------------------------------
+// --------------------------------------------
+//
+// Image Helper
+//
+// --------------------------------------------
+// --------------------------------------------
+
+img { line-height: 0; vertical-align: middle; }

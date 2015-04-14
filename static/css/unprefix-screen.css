@@ -31,13 +31,13 @@ html {
   }
 }
 
-.hdr-roster__h, .graphic__number, .side-nav__h, .roster-control__link, .form-wrapper legend, .graphics__hdr, .hdr-roster__h--sub, .switcher__item, .athlete-drop__hdr {
+.hdr-roster__h, .explain__h--xlg, .explain__h--lg, .graphic__number, .explain__h--med, .side-nav__h, .explain__h--sm, .roster-control__link, .form-wrapper legend, .explain__h--xsm, .explain__txt--lg, .graphics__hdr, .hdr-roster__h--sub, .switcher__item, .athlete-drop__hdr {
   font-family: Roboto, Helvetica, sans-serif;
   font-weight: 400;
   color: #727272;
 }
 
-.filters, .filters__trigger, .search, td, th, .athlete-drop__items, .form-wrapper input, .roster-control__item, .graphic__text {
+.filters, .filters__trigger, .search, td, th, .athlete-drop__items, .form-wrapper input, .explain__txt, .roster-control__item, .graphic__text {
   font-family: Roboto, Helvetica, sans-serif;
   font-weight: 500;
   color: #1d1d1d;
@@ -51,23 +51,29 @@ html {
   color: #727272;
 }
 
-.hdr-roster__h {
+.hdr-roster__h, .explain__h--xlg {
   font-size: 54px;
   letter-spacing: -1px;
   line-height: 1.1111;
 }
 
-.graphic__number {
+.explain__h--lg {
+  font-size: 45px;
+  letter-spacing: -1px;
+  line-height: 1.066666667;
+}
+
+.graphic__number, .explain__h--med {
   font-size: 32px;
   line-height: 1.25;
 }
 
-.side-nav__h {
+.side-nav__h, .explain__h--sm {
   font-size: 24px;
   line-height: 1.333333333;
 }
 
-.roster-control__link, .form-wrapper legend {
+.roster-control__link, .form-wrapper legend, .explain__h--xsm, .explain__txt--lg {
   font-size: 15px;
   letter-spacing: 0;
   line-height: 1.866666667;
@@ -79,7 +85,7 @@ html {
   line-height: 1.6;
 }
 
-.filters, .filters__trigger, .search, td, th, .athlete-drop__items, .form-wrapper input {
+.filters, .filters__trigger, .search, td, th, .athlete-drop__items, .form-wrapper input, .explain__txt {
   font-size: 13px;
   line-height: 1.846153846;
   color: #727272;
@@ -434,6 +440,11 @@ th {
   color: #727272;
 }
 
+.btn--xlg {
+  font-size: 16px;
+  padding: 0.75em 1em;
+}
+
 .btn--exit {
   position: absolute;
   right: 20px;
@@ -506,7 +517,22 @@ body.side-nav--is-active {
 .site-nav {
   width: 100%;
   height: 48px;
+  line-height: 48px;
   background-color: #232a31;
+  padding: 0 30px;
+}
+.site-nav a {
+  color: #b5b5b5;
+  text-decoration: none;
+  display: block;
+}
+.site-nav a:hover {
+  color: #cfcfcf;
+}
+
+img {
+  line-height: 0;
+  vertical-align: middle;
 }
 
 .hdr-roster__wrap {
@@ -1201,6 +1227,132 @@ th {
 .form-player--is-active {
   display: block;
   opacity: 1;
+}
+
+.explain__wrapper {
+  margin: 0 auto;
+}
+
+.explain {
+  padding-bottom: 100px;
+}
+
+.explain__group {
+  width: 100%;
+  text-align: center;
+}
+.explain__group + .explain__group {
+  margin-top: 100px;
+}
+
+.explain__group--med {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.explain__group--main {
+  background-color: #fff;
+  background-image: linear-gradient(#030404 3%, #43505e 55%, #fff);
+}
+
+.explain__mod {
+  padding: 40px 0 10px 0;
+  text-align: center;
+}
+
+.explain__mod--three {
+  overflow: hidden;
+  margin-left: -10%;
+}
+.explain__mod--three:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.explain__mod--three > .explain__item {
+  float: left;
+  width: 33.33333%;
+  padding-left: 10%;
+}
+.explain__mod--three > .explain__item:nth-of-type(3n + 4) {
+  clear: left;
+}
+.explain__mod--three > .explain__item:nth-of-type(1n + 4) {
+  margin-top: 10%;
+}
+.explain__mod--three:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.explain__mod--three + .explain__img-container {
+  margin-top: 50px;
+}
+
+.explain__h--xlg {
+  margin-bottom: 0;
+}
+
+.explain__h--lg {
+  margin-bottom: 0;
+}
+
+.explain__h--med {
+  margin-bottom: 0;
+  color: black;
+}
+
+.explain__h--xsm {
+  color: #1d1d1d;
+}
+
+.explain__txt--lg {
+  font-size: 16px;
+  color: #1d1d1d;
+}
+.explain__txt--lg a {
+  color: #1d1d1d;
+}
+.explain__txt--lg + .explain__mod--three {
+  margin-top: 50px;
+}
+
+.explain__txt {
+  font-size: 14px;
+}
+
+.explain__h--reverse {
+  color: #fff;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.explain__h--accent {
+  color: #fff;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.explain__txt--constrain {
+  max-width: 550px;
+  margin: 25px auto;
+}
+
+.explain__txt--space {
+  margin: 100px auto;
+}
+
+.explain__img-container img {
+  max-width: 100%;
+}
+
+.explain__img--rounded {
+  width: 150px;
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid #e8e8e8;
 }
 
 /*# sourceMappingURL=unprefix-screen.css.map */

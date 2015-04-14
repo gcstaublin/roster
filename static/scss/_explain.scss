@@ -1,0 +1,134 @@
+// --------------------------------------------
+// --------------------------------------------
+//
+// Explain
+//
+// --------------------------------------------
+// --------------------------------------------
+
+
+.explain__wrapper {
+  margin: 0 auto;
+}
+
+.explain {
+  padding-bottom: 100px;
+}
+
+.explain__group {
+  width: 100%;
+  text-align: center;
+  & + & { margin-top: 100px; }
+}
+
+.explain__group--med {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// .explain__group--main {
+//   background-color: #fff;
+//   background-image: linear-gradient($color-gray--drk 25%, lighten($color-gray--drk, 5%) 85%, #fff);
+// }
+
+
+.explain__group--main {
+  background-color: #fff;
+  background-image: linear-gradient(darken($color-gray--drk, 15%) 3%, lighten($color-gray--drk, 15%) 55%, #fff);
+}
+
+// .explain__group--accent {
+//   background-color: #fff;
+//   background-image: linear-gradient($color-gray--med 65%, #fff 75%);
+// }
+
+.explain__mod {
+  padding: 40px 0 10px 0;
+  text-align: center;
+}
+
+
+.explain__mod--three {
+  @include media-grid(3, 10%, $target: '.explain__item');
+  @include clearfix;
+
+  & + .explain__img-container { margin-top: 50px; }
+}
+
+.explain__item { }
+
+
+.explain__h--xlg {
+  @extend %disp-3;
+  margin-bottom: 0;
+}
+
+.explain__h--lg {
+  @extend %disp-2;
+  margin-bottom: 0;
+}
+
+.explain__h--med {
+  @extend %disp-1;
+  margin-bottom: 0;
+  color: black;
+}
+
+.explain__h--sm { @extend %headline; }
+
+
+.explain__h--xsm {
+  @extend %subhead-2;
+  color: $color-txt--med;
+}
+
+.explain__txt--lg {
+  @extend %subhead-2;
+  font-size: 16px;
+  color: $color-txt--med;
+
+  a { color: $color-txt--med; }
+
+  & + .explain__mod--three { margin-top: 50px; }
+}
+
+.explain__txt {
+  @extend %body-2;
+  font-size: 14px;
+}
+
+.explain__h--reverse {
+  color: #fff;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.explain__h--accent {
+  // color: $color-accent;
+  color: #fff;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.explain__txt--constrain {
+  max-width: 550px;
+  margin: 25px auto;
+}
+
+.explain__txt--space {
+  margin: 100px auto;
+}
+
+
+.explain__img-container {
+  img { max-width: 100%; }
+}
+
+.explain__img--rounded {
+  width: 150px;
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid $color-bg--med;
+}

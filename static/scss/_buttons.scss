@@ -21,6 +21,11 @@
   color: $color-txt--lt;
 }
 
+.btn--xlg {
+  font-size: 16px;
+  padding: 0.75em 1em;
+}
+
 
 .btn--exit {
   @extend %button;
